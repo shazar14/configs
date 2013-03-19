@@ -1,0 +1,6 @@
+ find ~/ -name "*.py" -exec grep "grepStri*" {} \; -exec ls -la {} \;
+find [path] [-name name of files] [-exec execute grep following by regex] [{} take whatever file find gives it]
+[\; escape the semicolon to end the command]
+
+this command searches the given path looking in any files ending in .py and then greps for the string grepStri*
+it then does a ls -la on the found files 
