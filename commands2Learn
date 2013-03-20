@@ -7,3 +7,23 @@ it then does a ls -la on the found files
 
 ifconfig wlan0 hw ether 00:11:22:33:44:55
 reconfigure 'wlan0' to new MAC address
+
+lsof -r 10 -i -P +c 0
+-r = refresh every 10 seconds
+-i = This option selects the listing of files any of whose Internet address matches the address specified in i.  If no address is
+                specified, this option selects the listing of all Internet and x.25 (HP-UX) network files.
+
+                If  -i4  or -i6 is specified with no following address, only files of the indicated IP version, IPv4 or IPv6, are displayed.
+                (An IPv6 specification may be used only if the dialects supports IPv6, as indicated by ``[46]'' and ``IPv[46]'' in lsof's -h
+                or -?  output.)  Sequentially specifying -i4, followed by -i6 is the same as specifying -i, and vice-versa.  Specifying -i4,
+                or -i6 after -i is the same as specifying -i4 or -i6 by itself.
+
+                Multiple addresses (up to a limit of 100) may be specified with multiple -i options.  (A port number or service  name  range
+                is counted as one address.)  They are joined in a single ORed set before participating in AND option selection.
+
+                An Internet address is specified in the form (Items in square brackets are optional.):
+
+                [46][protocol][@hostname|hostaddr][:service|port]
+-c 0 = If w is zero ('0'), all command characters supplied to lsof by the UNIX dialect will be printed.
+	prints all characters in the command column (default is 9 characters)
+
